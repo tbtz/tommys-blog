@@ -1,0 +1,19 @@
+@import 'variables';
+
+@mixin breakpoint($minPixels) {
+  @media screen and (min-width: $minPixels) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @include breakpoint($breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @include breakpoint($breakpoint-tablet) {
+    @content;
+  }
+}

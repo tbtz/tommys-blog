@@ -1,0 +1,55 @@
+@import '../../misc/colors';
+@import '../../misc/variables';
+@import '../../misc/mixins';
+
+form + aside {
+  width: 80%;
+  max-width: 500px;
+  padding: 30px;
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translate3d(0, 0, 0);
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  color: #fff;
+  background: $font-col-primary;
+  border: 1px solid #fff;
+  outline: 20px solid $font-col-primary;
+
+  font-size: 2.1rem;
+  line-height: 1.4;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &.slideIn {
+    animation: slideIn 3s forwards;
+  }
+}
+
+@keyframes slideIn {
+  0%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1%, 99% {
+    opacity: 0;
+    visibility: visible;
+  }
+  0% {
+    transform: translate(-50%, -150%) translate3d(0, 0, 0);
+  }
+  20%, 80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate(-50%, 50%) translate3d(0, 0, 0);
+  }
+}

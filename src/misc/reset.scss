@@ -1,0 +1,17 @@
+figure {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, p {
+  margin: 0;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    margin: 0;
+  }
+}

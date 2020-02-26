@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+figure {
+  margin: 0; }
+
+* {
+  box-sizing: border-box; }
+
+body, p {
+  margin: 0; }
+
+h1 {
+  margin: 0; }
+
+h2 {
+  margin: 0; }
+
+h3 {
+  margin: 0; }
+
+h4 {
+  margin: 0; }
+
+h5 {
+  margin: 0; }
+
+h6 {
+  margin: 0; }
+
+* {
+  font-family: 'Montserrat', sans-serif; }
+
+html {
+  font-size: 16px; }
+
+body {
+  color: #333; }
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  header > svg {
+    height: 40px; }
+  header > h1 {
+    display: none; }
+
+main {
+  margin-top: 70px; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  main form {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 500px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; }
+    main form > h1 {
+      font-weight: 400;
+      color: #333;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 10px; }
+    main form > fieldset, main form > input[type="submit"] {
+      border: 1px solid #333;
+      box-shadow: 3px 3px 0 #333;
+      margin: 30px 0 0;
+      font-size: 1rem; }
+    main form input, main form textarea {
+      width: 100%;
+      border: 0;
+      outline: none;
+      color: #333;
+      background: none;
+      padding: 10px;
+      font-size: inherit;
+      position: relative;
+      z-index: 1; }
+    main form > fieldset {
+      padding: 0;
+      position: relative; }
+      main form > fieldset > label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transition: .2s; }
+      main form > fieldset > textarea {
+        height: 200px; }
+      main form > fieldset > input.hasContent + label, main form > fieldset > input:focus + label, main form > fieldset > textarea.hasContent + label, main form > fieldset > textarea:focus + label {
+        font-size: 1rem;
+        left: 0;
+        top: -23px; }
+      main form > fieldset.inputError {
+        border-color: #ff4949; }
+        main form > fieldset.inputError > label {
+          color: #ff4949; }
+    main form > input[type="submit"] {
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .2s;
+      -webkit-appearance: none; }
+    main form > a {
+      margin-top: 20px;
+      text-transform: lowercase;
+      color: #333;
+      cursor: pointer;
+      text-align: center; }
+
+form + aside {
+  width: 80%;
+  max-width: 500px;
+  padding: 30px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translate3d(0, 0, 0);
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+  background: #333;
+  border: 1px solid #fff;
+  outline: 20px solid #333;
+  font-size: 2.1rem;
+  line-height: 1.4;
+  opacity: 0;
+  visibility: hidden; }
+  form + aside.slideIn {
+    animation: slideIn 3s forwards; }
+
+@keyframes slideIn {
+  0%, 100% {
+    opacity: 0;
+    visibility: hidden; }
+  1%, 99% {
+    opacity: 0;
+    visibility: visible; }
+  0% {
+    transform: translate(-50%, -150%) translate3d(0, 0, 0); }
+  20%, 80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate3d(0, 0, 0); }
+  100% {
+    transform: translate(-50%, 50%) translate3d(0, 0, 0); } }
+
+footer {
+  text-align: center;
+  margin: 40px 0 10px; }
+  footer > a {
+    margin-top: 20px;
+    text-transform: lowercase;
+    color: #333;
+    cursor: pointer;
+    text-align: center; }
+  footer > p {
+    margin-top: 20px; }
+    footer > p > span {
+      transition: .2s; }
+    footer > p:hover > span {
+      color: #db0000; }

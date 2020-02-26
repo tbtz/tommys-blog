@@ -1,0 +1,126 @@
+@import '../../misc/colors';
+@import '../../misc/variables';
+@import '../../misc/mixins';
+
+main {
+  > article {
+    width: 80%;
+    max-width: $max-content-width;
+    margin: 0 auto;
+
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr;
+
+    @include mobile() {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include tablet() {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  figure {
+    transform: translateY(-5px);
+    opacity: 0;
+    animation: flyIn 1.5s forwards;
+
+    @for $i from 1 through 999 {
+      &:nth-child(#{$i}) {
+        animation-delay: .15s*$i;
+      }
+    }
+
+    &:hover > a > div {
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 1;
+
+      &:before, &:after {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    > a {
+      display: inline-block;
+      font-size: 0;
+      position: relative;
+
+      > div {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: .4s;
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          background: #fff;
+
+          transition: .4s;
+          top: 50%;
+          left: 50%;
+        }
+
+        &:before {
+          height: 60px;
+          width: 1px;
+          transform: translate(-50%, -150%);
+        }
+
+        &:after {
+          width: 60px;
+          height: 1px;
+          transform: translate(-150%, -50%);
+        }
+      }
+
+      &:hover + figcaption > h2 {
+        color: $link-col-hover;
+      }
+
+      > img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: .6s;
+      }
+    }
+
+    > figcaption {
+      > h2 {
+        margin: 10px 0 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover a {
+          color: $link-col-hover;
+        }
+
+        > a {
+          text-decoration: none;
+          color: inherit;
+
+          transition: color .1s;
+        }
+      }
+
+      > p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@keyframes flyIn {
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

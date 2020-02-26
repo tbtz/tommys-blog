@@ -1,0 +1,102 @@
+@import '../../misc/colors';
+@import '../../misc/variables';
+@import '../../misc/mixins';
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 500px;
+
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    > h1 {
+      font-weight: 400;
+      color: $font-col-primary;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    > fieldset, > input[type="submit"] {
+      border: 1px solid $font-col-primary;
+      box-shadow: 3px 3px 0 $font-col-primary;
+
+      margin: 30px 0 0;
+
+      font-size: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 0;
+      outline: none;
+      color: $font-col-primary;
+      background: none;
+      padding: 10px;
+
+      font-size: inherit;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    > fieldset {
+      padding: 0;
+      position: relative;
+
+      > label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+
+        transition: .2s;
+      }
+
+      > textarea {
+        height: 200px;
+      }
+
+      > input, > textarea {
+        &.hasContent, &:focus {
+          + label {
+            font-size: 1rem;
+            left: 0;
+            top: -23px;
+          }
+        }
+      }
+
+      &.inputError {
+        border-color: $font-col-error;
+
+        > label {
+          color: $font-col-error;
+        }
+      }
+    }
+
+    > input[type="submit"] {
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .2s;
+      -webkit-appearance: none;
+    }
+
+    > a {
+      margin-top: 20px;
+      text-transform: lowercase;
+      color: $font-col-primary;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}

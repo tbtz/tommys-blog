@@ -1,0 +1,19 @@
+{
+  "name": "fedesweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "open http://localhost:3000 && npm run serve",
+    "serve": "python -m SimpleHTTPServer 3000",
+    "compile": "npm run compile-index & npm run compile-contact",
+    "compile-index": "node-sass src/pages/index/index.scss css/index.css",
+    "compile-contact": "node-sass src/pages/contact/contact.scss css/contact.css"
+  },
+  "author": "Tom Bautz",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "4.12.0",
+    "nodemon": "1.19.1"
+  }
+}

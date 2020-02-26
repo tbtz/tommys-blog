@@ -1,0 +1,13 @@
+@import 'colors';
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: $font-col-primary;
+}
